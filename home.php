@@ -39,5 +39,65 @@ class personOne{
 $personTwo = new personOne('testperson','testpersontwo');
 $personTwo->testName();
 
+?>
+
+<?php
+//destruct function ia an magical method
+class persondestruct{
+
+public $name;
+public $age;
+
+
+public function __destruct(){
+    if(! empty($this->id)){
+        echo "saving mode";
+    }
+
+}
+
+public function setId($id){
+    echo $this->id =$id;
+
+}
+}
+
+$persondestructs = new persondestruct();
+
+$persondestructs->setId(12);
+
+
+
+?>
+
+
+
+
+<?php
+// consrtuc and destruct function in oop php 
+ class twoInone{
+ 
+    public $one;
+    public $two;
+
+    public function __construct($ones,$twos){
+        echo $this->one =$ones;
+        echo $this->two =$twos;
+
+    }
+
+
+    public function __desstruct(){
+        unset($this->one);
+        unset($this->two);
+
+    }
+ } 
+
+ $testoness = new twoInone('1','3');
+
+
+
+
 
 ?>
