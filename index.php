@@ -52,7 +52,7 @@ function first(){
 
 }
 
- $amir = new person('iiii','iuggg');
+ $amir = new person('amir','22');
 
 echo $amir->first(); 
 ?>
