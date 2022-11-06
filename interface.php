@@ -67,3 +67,38 @@ $animal = new Cat();
 $animal->makeSound();
 ?>
  
+
+ <?php    
+   interface School{
+   	public function mySchool();
+   	public function myCollege();
+   	public function myVersity();
+
+
+   }
+
+
+
+   class Teacher implements School{
+
+   public function __construct(){
+   	$this->mySchool();
+   	$this->myCollege();
+   	$this->myVersity();
+   }
+
+   public function mySchool(){
+   	   		echo "i am hacker";
+   	   	}   
+   public function myCollege(){
+   	   		echo "i am hacker";
+   	   	}   
+   public function myVersity(){
+   	   		echo "i am hacker";
+   	   	}
+
+   }
+
+   $tesst = new Teacher();
+
+ ?>
