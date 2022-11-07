@@ -88,13 +88,13 @@ $animal->makeSound();
    }
 
    public function mySchool(){
-   	   		echo "i am hacker";
+   	   		echo "i am new";
    	   	}   
    public function myCollege(){
-   	   		echo "i am hacker";
+   	   		echo "i am test";
    	   	}   
    public function myVersity(){
-   	   		echo "i am hacker";
+   	   		echo "i am user";
    	   	}
 
    }
