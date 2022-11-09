@@ -66,10 +66,26 @@ $st->describe();
 $st->Amir; // thise is undefined property 
 $st->age ="12";
 $st->DEscribeIt('2','7','10');
-
-
-
-
-
-
  ?>
+
+ <?php 
+ include "inc/student.php"; //another page e mathod declare kora acea and with class
+
+ if(class_exists("Student")){
+ 	$st = new Student();
+ 	if(method_exists($st, 'describe')){
+ 		$st->describe();
+ 	}else{
+ 		echo "method mot found";
+ 	}
+ }else{
+ 	echo "class not gfound";
+ }
+
+
+
+
+
+
+
+  ?>
