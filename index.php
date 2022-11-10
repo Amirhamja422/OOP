@@ -1,91 +1,40 @@
 
-<?php
+<!-- ///////////////////////////////////two number add ,sub ,div, mult using oop /////////////////////////////////// -->
 
-// construct function 
+<?php include "inc/function.php";?>
+   <form action="" method="post">
+    <table>
+    	<tr>
+    	 <td>Enter the first number</td>
+    	 <td><input type="number" name="num1"></td>
+    	 <td>Enter the Secound number</td>
+    	 <td><input type="number" name="num2"></td>
+       </tr>
+       <tr>
+       	<td><input type="submit" name="calculation" value="calculation"></td>
+       </tr>
+    </table>	
+   </form>
 
-class person{
-public static $age ='22';
-const NAME ="AMIR";
+	<?php
+	  if(isset($_POST['calculation'])){
+	  	$numOne = $_POST['num1'];  
+	    $numTwo =$_POST['num2'];
 
-public static function display(){
-	//const
-	echo "Full Name :".person::NAME."</br>";
-	//static
-	echo "Age is    :".self::$age;
-}
+	    if(empty($numOne) or empty($numTwo)){
+	    	echo "<span style='color:red;'>Field must not be empty</span>";
 
+	    }
 
-}
+	    $cal = new calculations();
+	    $cal->twonumberAdd($numOne,$numTwo);
+	    $cal->twonumberSub($numOne,$numTwo);
+	    $cal->twonumberMult($numOne,$numTwo);
+	    $cal->twonumberDiv($numOne,$numTwo);
 
-$amir = new person();
-$amir->display();
+	  }
 
-//for static variable
-person::display();
-?>
-
-
-
-<?php
-
-// magic method 
-
-
-//get ($property)
-//set ($property, $value)   // all are magic method
-//call($method, $arg_array) //undefined method
-
-class Student{
-	public $name;
-	public function describe(){
-     echo "I am a Student";
-	}
-	public function __get($pm){
-		echo "$pm does not match";
-
-
-	}
-
-
-public function __set($pm,$value){
-	echo "we set $pm->$value";
-}
-
-public function __call($pm,$value){
-	echo 'There is no '.$pm.' method and argument '.implode(',',$value);
-}
-
-}
+	?>
 
 
 
-
-
-$st = new Student();
-$st->describe();
-$st->Amir; // thise is undefined property 
-$st->age ="12";
-$st->DEscribeIt('2','7','10');
- ?>
-
- <?php 
- include "inc/student.php"; //another page e mathod declare kora acea and with class
-
- if(class_exists("Student")){
- 	$st = new Student();
- 	if(method_exists($st, 'describe')){
- 		$st->describe();
- 	}else{
- 		echo "method mot found";
- 	}
- }else{
- 	echo "class not gfound";
- }
-
-
-
-
-
-
-
-  ?>
