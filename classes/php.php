@@ -1,7 +1,6 @@
 <?php
 namespace amir;
-
-class Java{
+class Php{
 	function __construct(){
 		echo "i am learning java";
 	}
