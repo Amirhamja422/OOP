@@ -1,8 +1,15 @@
 <?php   
 
+$arr = array("php","python");
+$codding = new ArrayObject($arr);
+$codding->append("java");
+$iterator =$codding->getIterator();
 
-echo "ok";
+while ($iterator->valid()) {
+	echo $iterator->current()."<br/>";
+	$iterator->next();
 
+}
 
 
 ?>
